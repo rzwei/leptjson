@@ -1,0 +1,13 @@
+[
+{
+  "directory": "d:/projects/tutorial/json/build",
+  "command": "C:\\PROGRA~2\\MICROS~1\\2017\\COMMUN~1\\VC\\Tools\\MSVC\\1415~1.267\\bin\\Hostx64\\x64\\cl.exe  /nologo   /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1   /FoCMakeFiles\\leptjson.dir\\leptjson.c.obj /FdTARGET_COMPILE_PDB /FS -c D:\\projects\\tutorial\\json\\leptjson.c",
+  "file": "D:/projects/tutorial/json/leptjson.c"
+},
+
+{
+  "directory": "d:/projects/tutorial/json/build",
+  "command": "C:\\PROGRA~2\\MICROS~1\\2017\\COMMUN~1\\VC\\Tools\\MSVC\\1415~1.267\\bin\\Hostx64\\x64\\cl.exe  /nologo   /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1   /FoCMakeFiles\\leptjson_test.dir\\test.c.obj /FdTARGET_COMPILE_PDB /FS -c D:\\projects\\tutorial\\json\\test.c",
+  "file": "D:/projects/tutorial/json/test.c"
+}
+]
