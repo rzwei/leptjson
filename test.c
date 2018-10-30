@@ -178,14 +178,6 @@ static void test_parse_string()
 #if 1
     TEST_STRING("Hello\nWorld", "\"Hello\\nWorld\"");
     TEST_STRING("\" \\ / \b \f \n \r \t", "\"\\\" \\\\ \\/ \\b \\f \\n \\r \\t\"");
-    // const char *expect = "\" \\ / \b \f \n \r \t";
-    // const char *json = "\"\\\" \\\\ \\/ \\b \\f \\n \\r \\t\"";
-    // lept_value v;
-    // lept_init(&v);
-    // EXPECT_EQ_INT(LEPT_PARSE_OK, lept_parse(&v, json));
-    // EXPECT_EQ_INT(LEPT_STRING, lept_get_type(&v));
-    // EXPECT_EQ_STRING(expect, lept_get_string(&v), lept_get_string_length(&v));
-    // lept_free(&v);
 #endif
 }
 

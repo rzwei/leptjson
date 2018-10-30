@@ -22,6 +22,8 @@ enum
 	LEPT_PARSE_MISS_QUOTATION_MARK,
 	LEPT_PARSE_INVALID_STRING_ESCAPE,
 	LEPT_PARSE_INVALID_STRING_CHAR,
+	LEPT_PARSE_INVALID_UNICODE_SURROGATE,
+	LEPT_PARSE_INVALID_UNICODE_HEX,
 };
 
 typedef struct
@@ -38,10 +40,10 @@ typedef struct
 } lept_value;
 
 #define lept_init(v)           \
-    do                         \
-    {                          \
-        (v)->type = LEPT_NULL; \
-    } while (0)
+	do                         \
+	{                          \
+		(v)->type = LEPT_NULL; \
+	} while (0)
 
 #define lept_set_null(v) lept_free(v)
 
