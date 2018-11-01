@@ -55,7 +55,7 @@ struct lept_value
 };
 struct lept_member
 {
-	const char *k;
+	char *k;
 	size_t klen;
 	lept_value v;
 };
@@ -89,7 +89,7 @@ size_t lept_get_array_size(const lept_value *v);
 lept_value *lept_get_array_element(const lept_value *v, size_t index);
 
 size_t lept_get_object_size(const lept_value *v);
-const char *lept_get_object_key(const lept_value *v, size_t index);
+char *lept_get_object_key(const lept_value *v, size_t index);
 size_t lept_get_key_length(const lept_value *v, size_t index);
 lept_value *lept_get_object_value(const lept_value *v, size_t index);
 #endif
