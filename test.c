@@ -332,7 +332,7 @@ static void serialize(const lept_value *v, int step, int last)
     }
     else if (v->type == LEPT_NUMBER)
     {
-        printf("%g", v->n);
+        printf("%f", v->n);
         if (!last)
             printf(",");
     }
@@ -358,7 +358,7 @@ static void serialize(const lept_value *v, int step, int last)
         SET_STEP(step);
         printf("}");
         if (!last)
-            printf(",");
+            printf(", ");
     }
 }
 
@@ -506,11 +506,13 @@ static void test_parse_object()
     // serialize(&v, 0, 1);
     // lept_free(&v);
 
-    json = "{\"name\":\"BeJson\",\"url\":\"http://www.bejson.com\",\"page\":88,\"isNonProfit\":true,\"address\":{\"street\":\"xxx\",\"city\":\"xxxxa\",\"country\":\"china\"},\"links\":[{\"name\":\"Google\",\"url\":\"http://www.google.com\"},{\"name\":\"Baidu\",\"url\":\"http://www.baidu.com\"},{\"name\":\"SoSo\",\"url\":\"http://www.SoSo.com\"}]}";
-    // json = "{\"links\":[{\"name\":\"Google\",\"url\":\"http://www.google.com\"},{\"name\":\"Baidu\",\"url\":\"http://www.baidu.com\"},{\"name\":\"SoSo\",\"url\":\"http://www.SoSo.com\"}]}";
+    //json = "{\"name\":\"BeJson\",\"url\":\"http://www.bejson.com\",\"page\":88,\"isNonProfit\":true,\"address\":{\"street\":\"xxx\",\"city\":\"xxxxa\",\"country\":\"china\"},\"links\":[{\"name\":\"Google\",\"url\":\"http://www.google.com\"},{\"name\":\"Baidu\",\"url\":\"http://www.baidu.com\"},{\"name\":\"SoSo\",\"url\":\"http://www.SoSo.com\"}]}";
+    json = "{\"links\":[{\"name\":\"Google\",\"url\":\"http://www.google.com\"},{\"name\":\"Baidu\",\"url\":\"http://www.baidu.com\"},{\"name\":\"SoSo\",\"url\":\"http://www.SoSo.com\"}]}";
+    //json = "{\"preset_words\":{\"words\":[{\"id\":\"be424a4fdffe2202b7cfd8dff516f9aeabd56968\",\"type\":\"activity\",\"query\":\"要买对的先上知乎\",\"real_query\":\"要买对的先上知乎\",\"weight\":2,\"begin_ts\":1541001600,\"end_ts\":1541952000,\"valid\":1,\"floorpage_url\":\"https://event.zhihu.com/2018-11-11/\",\"floorpage_logo\":\"https://pic4.zhimg.com/v2-ccfb3df2aede5080ab6bb053a55f5a11.png\",\"floorpage_flag\":\"进行中\"},{\"id\":\"2f20e7c58bf8ace14809825b46950d142a1faddf\",\"type\":\"general\",\"query\":\"罗永浩宣告T系列的失败\",\"real_query\":\"罗永浩T系列\",\"weight\":1,\"begin_ts\":1540971300,\"end_ts\":1541057700,\"valid\":1},{\"id\":\"56afb69f603aa2def2829065b939bcb8db705493\",\"type\":\"general\",\"query\":\"直面「互联网隐私焦虑」\",\"real_query\":\"互联网隐私\",\"weight\":1,\"begin_ts\":1540972680,\"end_ts\":1541059080,\"valid\":1},{\"id\":\"f9bf62c30a5809881a43ee1b06203ac390c47f5e\",\"type\":\"general\",\"query\":\"罗斯50分，老兵不哭！\",\"real_query\":\"罗斯50分\",\"weight\":2,\"begin_ts\":1541048690,\"end_ts\":1541135092,\"valid\":1}],\"next_request_ts\":1541050171}}";
     lept_parse(&v, json);
-    show_lept_value(0, &v);
+    // show_lept_value(0, &v);
     serialize(&v, 0, 1);
+    printf("\n");
     lept_free(&v);
 }
 
