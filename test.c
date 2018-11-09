@@ -924,7 +924,7 @@ int main()
 	test_copy();
 	test_move();
 	test_swap();
-	// test_access();	//todo fixbug
+	test_access(); //todo fixbug
 	printf("%d/%d (%3.2f%%) passed\n", test_pass, test_count, test_pass * 100.0 / test_count);
 
 	_CrtDumpMemoryLeaks();

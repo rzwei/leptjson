@@ -801,7 +801,7 @@ lept_value *lept_pushback_array_element(lept_value *v)
 void lept_popback_array_element(lept_value *v)
 {
 	assert(v != NULL && v->type == LEPT_ARRAY);
-	lept_free(v->e + (v->size--));
+	lept_free(v->e + (--(v->size)));
 }
 
 lept_value *lept_insert_array_element(lept_value *v, size_t index)
