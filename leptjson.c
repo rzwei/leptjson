@@ -1,8 +1,3 @@
-#ifdef _WINDOWS
-#define _CRTDBG_MAP_ALLOC
-#include <crtdbg.h>
-#endif
-
 #include "leptjson.h"
 #include <assert.h>
 #include <stdlib.h>

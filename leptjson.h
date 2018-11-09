@@ -1,5 +1,11 @@
 #ifndef LEPTJSON_H__
 #define LEPTJSON_H__
+
+#ifdef _WINDOWS
+#define _CRTDBG_MAP_ALLOC
+#include <crtdbg.h>
+#endif
+
 #include <stddef.h>
 typedef enum
 {
