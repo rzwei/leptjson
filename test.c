@@ -611,8 +611,8 @@ static void test_stringify()
 		EXPECT_EQ_INT(LEPT_PARSE_OK, lept_parse(&v1, json1)); \
 		EXPECT_EQ_INT(LEPT_PARSE_OK, lept_parse(&v2, json2)); \
 		EXPECT_EQ_INT(equality, lept_is_equal(&v1, &v2));     \
-		lept_free(&v1);										  \
-		lept_free(&v2);										  \
+		lept_free(&v1);                                       \
+		lept_free(&v2);                                       \
 	} while (0)
 
 static void test_equal()
@@ -697,7 +697,7 @@ static void test_access_array()
 		EXPECT_EQ_SIZE_T(0, lept_get_array_size(&a));
 		EXPECT_EQ_SIZE_T(j, lept_get_array_capacity(&a));
 		for (i = 0; i < 10; i++)
- 		{
+		{
 			lept_init(&e);
 			lept_set_number(&e, i);
 			lept_move(lept_pushback_array_element(&a), &e);
@@ -730,7 +730,8 @@ static void test_access_array()
 		EXPECT_EQ_DOUBLE((double)i + 2, lept_get_number(lept_get_array_element(&a, i)));
 
 #if 1
-	for (i = 0; i < 2; i++) {
+	for (i = 0; i < 2; i++)
+	{
 		lept_init(&e);
 		lept_set_number(&e, i);
 		lept_move(lept_insert_array_element(&a, i), &e);
@@ -765,7 +766,7 @@ static void test_access_array()
 }
 static void test_access_object()
 {
-#if 0
+#if 1
 	lept_value o, v, *pv;
 	size_t i, j, index;
 
@@ -886,8 +887,8 @@ static void test_access()
 	test_access_boolean();
 	test_access_number();
 	test_access_string();
-	test_access_object();
 	test_access_array();
+	test_access_object();
 }
 static void test_parse()
 {
@@ -924,7 +925,7 @@ int main()
 	test_copy();
 	test_move();
 	test_swap();
-	test_access(); //todo fixbug
+	test_access();
 	printf("%d/%d (%3.2f%%) passed\n", test_pass, test_count, test_pass * 100.0 / test_count);
 
 	_CrtDumpMemoryLeaks();
